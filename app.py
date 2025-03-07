@@ -1,4 +1,4 @@
-## This function opens the CSV for You!
+""" ## This function opens the CSV for You!
 def csv_to_list(file_path):
     data_list = []
     
@@ -17,6 +17,15 @@ print(data)  # Output the list
 
 
 
+ """
 
+numbers = [1, 2, 3, 4, 5]
+#make ur own function 
+def double(x):
+    return x * 2
+# Use map() to double the numbers
+doubled_numbers = map(double, numbers) #map = (function, what ur iterating)
+
+print(list(doubled_numbers))
     
 
