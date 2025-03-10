@@ -100,7 +100,7 @@ print(doubled) """
 
 #complex list, turn a list into another list'
 
-sales_data = [
+""" sales_data = [
     ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
     ["Store A", 5000, 7000, 6500],
     ["Store B", 8000, 6000, 7500]
@@ -108,6 +108,16 @@ sales_data = [
 
 def calcRowLC(data):
     row_totals = {row[0]: sum([int(x) for x in row[1:]]) for row in data[1:]}
-    return row_totals
+    return row_totals """
 
-print(calcRowLC(sales_data))
+""" print(calcRowLC(sales_data))
+ """
+
+temperatures = ["Label", 32, 50, 77, 104]
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5 / 9
+
+celsius = list(map(fahrenheit_to_celsius, temperatures[1:]))
+
+print(celsius)
