@@ -80,7 +80,7 @@ sales_data = [
 totals = calcRow(sales_data)
 print(totals)
  """
-sales_data = [
+""" sales_data = [
     ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
     ["Store A", 5000, 7000, 6500],
     ["Store B", 8000, 6000, 7500]
@@ -92,4 +92,22 @@ for row in sales_data[1:]:
     row_totals[row[0]] = sum(sales)
 print(row_totals)
 
-#returns the sum of all integers iterated over any row except the first bc its the names of them how would u even add them???? ??? like?? ??
+#returns the sum of all integers iterated over any row except the first bc its the names of them how would u even add them???? ??? like?? ?? """
+
+""" numbers = [2,4,6,8]
+doubled = [num **2**2**2 for num in numbers]
+print(doubled) """
+
+#complex list, turn a list into another list'
+
+sales_data = [
+    ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
+    ["Store A", 5000, 7000, 6500],
+    ["Store B", 8000, 6000, 7500]
+]
+
+def calcRowLC(data):
+    row_totals = {row[0]: sum([int(x) for x in row[1:]]) for row in data[1:]}
+    return row_totals
+
+print(calcRowLC(sales_data))
