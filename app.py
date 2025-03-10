@@ -31,7 +31,7 @@ print(list(doubled_numbers))
 
  """
 
-#skipping loops
+""" #skipping loops
 
 data = [
     ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row (skip this)
@@ -40,4 +40,56 @@ data = [
 ]
 
 for row in data[1:2:]:  # Skip the first AND row 
-    print(row)
+    print(row) """
+
+""" sales_data = [
+    ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
+    ["Store A", 5000, 7000, 6500],
+    ["Store B", 8000, 6000, 7500]
+]
+
+def rowtotal():
+
+    row_totals={}
+    def skibidi():
+        for i in sales_data:
+            return i
+        skibidi()
+    sales = map(int, sales_data[1:])
+    row_totals["store_name"] = sum(sales)  # Sum up sales for the store
+    return row_totals
+rowtotal()
+ """
+
+""" def calcRow(data):
+    row_totals = {}
+
+    for row in data[1:]:  # Skipping the first row
+        sales = map(int, row[1:])  # Convert sales to numbers
+        row_totals[row[0]] = sum(sales)  # Sum up sales for the store #aka u add 
+
+    return row_totals
+
+# Example Data
+sales_data = [
+    ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
+    ["Store A", 5000, 7000, 6500],
+    ["Store B", 8000, 6000, 7500]
+]
+
+totals = calcRow(sales_data)
+print(totals)
+ """
+sales_data = [
+    ["Store Name", "Day 1", "Day 2", "Day 3"],  # Header row
+    ["Store A", 5000, 7000, 6500],
+    ["Store B", 8000, 6000, 7500]
+]
+
+row_totals = {}
+for row in sales_data[1:]:
+    sales = map(int, row[1:])
+    row_totals[row[0]] = sum(sales)
+print(row_totals)
+
+#returns the sum of all integers iterated over any row except the first bc its the names of them how would u even add them???? ??? like?? ??
