@@ -116,8 +116,9 @@ def calcRowLC(data):
 temperatures = ["Label", 32, 50, 77, 104]
 
 def fahrenheit_to_celsius(f):
-    return (f - 32) * 5 / 9
+    return float((f - 32) * 5 / 9)
 
-celsius = list(map(fahrenheit_to_celsius, temperatures[1:]))
+for f in temperatures:
+    celsius = list(map(fahrenheit_to_celsius, temperatures[1:]))
 
 print(celsius)
