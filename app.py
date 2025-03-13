@@ -18,11 +18,14 @@ def rowtotal():
     row_totals = {}
 
     for row in data[1:]:  
-        whatever = row[0]  
-        sales = map(int, row[1:])  # Convert sales columns to integers
-        row_totals[whatever]  = sum(sales)  # ur iterating from row whatever to the last, if whatevver is row 10 u start at that
+        start = row[0]  
+        sales = list(map(int, row[1:]))  #convert to list of nums to use later
+        row_totals[start] = sum(sales)  # Calculate total sales for that store
+        
+        # Calculate the average sales per store
+        average = sum(sales) / len(sales)  # Total sales divided by the number of sales columns
 
-    print(row_totals)
+        print(f"{start} average sales: {average}")
 
 rowtotal()
 
