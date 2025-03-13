@@ -16,23 +16,32 @@ data = csv_to_list(file_path)
 
 
 def rowtotal():
-    rowtotals=[]
-    for row in data[1:]: 
+    rowtotals = []
+    for row in data[1:]:  # Skip the header row
         start = row[0]
-        sales = list(map(int, row[1:]))  
-        row_total = sum(sales)
-        rowtotals.append(row_total)  
-        for i in rowtotals:
-            row_total / i
-    print(row_total)
+        sales = list(map(int, row[1:]))  # Convert sales to integers
+        row_total = sum(sales)  # Calculate total sales for the row
+        rowtotals.append(row_total)  # Add total sales to the list
+        
+        # Calculate the average for the current row (total sales / number of sales columns)
+        average = row_total / len(sales) 
+    print(average)
+rowtotal()
+
+
+    
+    
+
+
+
+        
+
 
     
     
 
     # Print the store names and their averages
-    print()
 
-rowtotal()
 
 """ def rowtotal():
     row_totals = {}
