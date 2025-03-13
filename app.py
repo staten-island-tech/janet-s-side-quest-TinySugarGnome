@@ -1,4 +1,4 @@
-""" ## This function opens the CSV for You!
+ ## This function opens the CSV for You!
 def csv_to_list(file_path):
     data_list = []
     
@@ -13,11 +13,21 @@ def csv_to_list(file_path):
 
 file_path = "SalesData.csv"  
 data = csv_to_list(file_path)
-print(data)  # Output the list
+
+def rowtotal():
+    row_totals = {}
+
+    for row in data[1:]:  
+        whatever = row[0]  
+        sales = map(int, row[1:])  # Convert sales columns to integers
+        row_totals[whatever]  = sum(sales)  # ur iterating from row whatever to the last, if whatevver is row 10 u start at that
+
+    print(row_totals)
+
+rowtotal()
 
 
 
- """
 """ 
 numbers = [1, 2, 3, 4, 5]
 #make ur own function 
@@ -113,7 +123,7 @@ def calcRowLC(data):
 """ print(calcRowLC(sales_data))
  """
 
-temperatures = ["Label", 32, 50, 77, 104]
+""" temperatures = ["Label", 32, 50, 77, 104]
 
 def fahrenheit_to_celsius(f):
     return float((f - 32) * 5 / 9)
@@ -121,4 +131,4 @@ def fahrenheit_to_celsius(f):
 for f in temperatures:
     celsius = list(map(fahrenheit_to_celsius, temperatures[1:]))
 
-print(celsius)
+print(celsius) """
