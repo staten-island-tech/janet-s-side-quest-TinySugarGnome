@@ -14,7 +14,27 @@ def csv_to_list(file_path):
 file_path = "SalesData.csv"  
 data = csv_to_list(file_path)
 
+
 def rowtotal():
+    rowtotals=[]
+    for row in data[1:]: 
+        start = row[0]
+        sales = list(map(int, row[1:]))  
+        row_total = sum(sales)
+        rowtotals.append(row_total)  
+        for i in rowtotals:
+            row_total / i
+    print(row_total)
+
+    
+    
+
+    # Print the store names and their averages
+    print()
+
+rowtotal()
+
+""" def rowtotal():
     row_totals = {}
     averages = [] 
     store_names = []  
@@ -35,7 +55,7 @@ def rowtotal():
     print(sorted_averages)
 
 rowtotal()
-
+ """
 
 
 """ 
