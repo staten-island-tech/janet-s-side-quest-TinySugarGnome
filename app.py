@@ -13,6 +13,44 @@ def csv_to_list(file_path):
 
 file_path = "SalesData.csv"  
 data = csv_to_list(file_path)
+
+bruh = []
+for row in data[1:]:
+    start = row[0]
+    sales = list(map(int, row[1:]))
+    total = sum(sales)
+    bruh.append((start, total))
+print(bruh)
+
+""" def rowtotal():
+    total_sales_sum = 0  # Sum of all sales
+    total_sales_count = 0  # Total number of sales entries (all days)
+    store_averages = {}
+    good_stores = []
+    bad_stores = []
+    for row in data[1:]:
+        start = row[0] # why row 0 duh its called the store name
+        sales = list(map(int, row[1:]))  
+        average = sum(sales) / len(sales) 
+        store_averages[start] = average  
+        sales = list(map(int, row[1:])) 
+        total_sales_sum += sum(sales)  
+        total_sales_count += len(sales) # u have to loop through all values
+
+    
+    overall_average = total_sales_sum / total_sales_count if total_sales_count > 0 else 0
+    for key, value in store_averages.items(): #using this means key (name) value(num) in dict.items(pairs)
+        if value * 0.8 >= overall_average:  
+            good_stores.append((key, value))
+        else:  
+            bad_stores.append((key, value))
+
+    # Print the results
+    print(f"Good:", good_stores)
+    print(f"Bad stores:", bad_stores)
+    print(overall_average)
+
+rowtotal() """
 """ def rowtotal():
     averages = []  
     WEWANTYOU = []
@@ -53,34 +91,7 @@ rowtotal() """
     print(f"Overall average sales across all stores: {overall_average}")
 rowtotal() """
 
-def rowtotal():
-    total_sales_sum = 0  # Sum of all sales
-    total_sales_count = 0  # Total number of sales entries (all days)
-    store_averages = {}
-    good_stores = []
-    bad_stores = []
-    for row in data[1:]:
-        start = row[0] # why row 0 duh its called the store name
-        sales = list(map(int, row[1:]))  
-        average = sum(sales) / len(sales) 
-        store_averages[start] = average  
-        sales = list(map(int, row[1:])) 
-        total_sales_sum += sum(sales)  
-        total_sales_count += len(sales) # u have to loop through all values
 
-    
-    overall_average = total_sales_sum / total_sales_count if total_sales_count > 0 else 0
-    for key, value in store_averages.items(): #using this means key (name) value(num) in dict.items(pairs)
-        if value * 0.8 >= overall_average:  
-            good_stores.append((key, average))
-        else:  
-            bad_stores.append((key, average))
-
-    # Print the results
-    print(f"Good:", good_stores)
-    print(f"Bad stores:", bad_stores)
-
-rowtotal()
 """ def rowtotal():
     for row in data[1:]: 
         start = row[0]  
