@@ -14,6 +14,25 @@ def csv_to_list(file_path):
 file_path = "SalesData.csv"  
 data = csv_to_list(file_path)
 
+bruh = []
+total_sales = 0
+total_average = 0
+
+for row in data[1:]:
+    start = row[0]
+    sales = list(map(int, row[1:]))
+    total = sum(sales)
+    average = total / len(sales)
+    bruh.append((average, start))
+    total_sales += total  # Sum of all sales from all stores
+    total_average += len(sales)  # Total months for all stores
+overall_average = total_sales / total_average
+
+bruh.sort(reverse=True)
+
+print("Overall Average Sales:", overall_average)  # Overall average for all sales months
+print(bruh)
+
 """ bruh = []
 for row in data[1:]:
     start = row[0]
